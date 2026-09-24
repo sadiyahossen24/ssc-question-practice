@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — SSC Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #121212;
+      --paper: #F5F2E8;
+      --yellow: #EEFF3F;
+      --coral: #FF5C3E;
+      --grey: #8B8B85;
+      --app-width: 400px;
+      --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background: var(--ink);
+      color: var(--paper);
+      display: flex;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .app-shell {
+      width: 100%;
+      max-width: var(--app-width);
+      min-height: 100vh;
+      background: var(--ink);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
+    @media (min-width: 480px) {
+      body { padding: 32px 16px; align-items: flex-start; justify-content: center; }
+      .app-shell {
+        min-height: 780px;
+        max-height: 860px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px solid var(--ink);
+        box-shadow: 8px 8px 0 var(--yellow);
+      }
+    }
+    .badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--yellow);
+      border: 2px solid var(--paper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .badge svg { width: 24px; height: 24px; stroke: var(--ink); }
+    h1 {
+      font-weight: 900;
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+    p {
+      font-size: 0.78rem;
+      color: var(--grey);
+      max-width: 30ch;
+      margin: 0 0 22px;
+      line-height: 1.5;
+    }
+    a {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 2px solid var(--paper);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <span class="badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8V13" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="16.5" r="1" fill="#121212"/>
+        <circle cx="12" cy="12" r="9" stroke-width="2"/>
+      </svg>
+    </span>
+    <h1>Quiz coming in Phase 3</h1>
+    <p>The quiz screen (questions, answers, feedback) isn't built yet — that's the next phase.</p>
+    <a href="index.html">Back to home</a>
+  </div>
+</body>
+</html>

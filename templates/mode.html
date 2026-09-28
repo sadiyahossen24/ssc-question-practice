@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Mode - SSC Prep</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <!-- Top App Bar -->
+        <div class="app-header">
+            <a href="/" class="back-link">← Back</a>
+            <div class="streak-badge">
+                🎯 প্র্যাকটিস মোড
+            </div>
+        </div>
+
+        <div class="section-title">
+            প্র্যাকটিস ধরণ নির্বাচন করো
+        </div>
+
+        <div class="subject-list">
+            <!-- Chapter Wise Practice Card -->
+            <a id="chapter-mode-btn" href="#" class="subject-card">
+                <div class="card-left">
+                    <div class="icon-box physics-icon">📚</div>
+                    <div class="subject-info">
+                        <h4>অধ্যায়ভিত্তিক প্র্যাকটিস</h4>
+                        <p>প্রতিটি অধ্যায় আলাদাভাবে প্র্যাকটিস করো</p>
+                    </div>
+                </div>
+                <span class="action-btn">শুরু →</span>
+            </a>
+
+            <!-- Year Wise Practice Card -->
+            <a id="year-mode-btn" href="#" class="subject-card">
+                <div class="card-left">
+                    <div class="icon-box chem-icon">📅</div>
+                    <div class="subject-info">
+                        <h4>বোর্ড প্রশ্ন (সালভিত্তিক)</h4>
+                        <p>বিগত বছরের বোর্ড প্রশ্ন সমাধান করো</p>
+                    </div>
+                </div>
+                <span class="action-btn">শুরু →</span>
+            </a>
+        </div>
+
+        <!-- Bottom Navigation Bar -->
+        <div class="bottom-nav">
+            <a href="/" class="nav-item active">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="/profile" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Profile</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- External JS Linked -->
+    <script src="{{ url_for('static', filename='js/mode.js') }}"></script>
+</body>
+</html>

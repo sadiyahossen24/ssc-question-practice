@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Setup - SSC Prep</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <!-- Top Header -->
+        <div class="app-header">
+            <a href="/" class="back-link">← Home</a>
+            <div class="streak-badge">
+                ⚙️ প্রোফাইল সেটআপ
+            </div>
+        </div>
+
+        <div class="section-title">
+            <span>শিক্ষার্থীর তথ্য</span>
+        </div>
+
+        <!-- Profile Card Form -->
+        <div class="profile-card">
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="student-name">তোমার নাম</label>
+                    <input type="text" id="student-name" class="form-input" placeholder="যেমন: Sadiya Hossen" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-class">পরীক্ষার বছর (ব্যাচ)</label>
+                    <select id="student-class" class="form-input">
+                        <option value="SSC 2025">SSC 2025</option>
+                        <option value="SSC 2026">SSC 2026</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-group">গ্রুপ (Group)</label>
+                    <select id="student-group" class="form-input">
+                        <option value="science">বিজ্ঞান (Science)</option>
+                        <option value="commerce">ব্যবসায় শিক্ষা (Commerce)</option>
+                        <option value="arts">মানবিক (Arts)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">তথ্য সংরক্ষণ করো 💾</button>
+            </form>
+        </div>
+
+        <!-- Bottom Navigation Bar -->
+        <div class="bottom-nav">
+            <a href="/" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="/profile" class="nav-item active">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Profile</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- External JS Linked -->
+    <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+</body>
+</html>

@@ -3,64 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Mode - SSC Prep</title>
+    <title>Preparation Mode - SSC Prep</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
     <div class="app-wrapper">
-        <!-- Top App Bar -->
+        <!-- Header Bar -->
         <div class="app-header">
-            <a href="/" class="back-link">← Back</a>
-            <div class="streak-badge">
-                🎯 প্র্যাকটিস মোড
-            </div>
+            <a href="/" class="back-link">← Back to Dashboard</a>
+            <div class="streak-badge">⚡ SSC Prep</div>
         </div>
 
         <div class="section-title">
-            প্র্যাকটিস ধরণ নির্বাচন করো
+            <h2 id="selected-subject-title">Loading Subject...</h2>
+            <p style="color: #a0aec0; font-size: 13px;">প্রস্তুতির ধরন নির্বাচন করো</p>
         </div>
 
-        <div class="subject-list">
-            <!-- Chapter Wise Practice Card -->
-            <a id="chapter-mode-btn" href="#" class="subject-card">
-                <div class="card-left">
-                    <div class="icon-box physics-icon">📚</div>
-                    <div class="subject-info">
-                        <h4>অধ্যায়ভিত্তিক প্র্যাকটিস</h4>
-                        <p>প্রতিটি অধ্যায় আলাদাভাবে প্র্যাকটিস করো</p>
-                    </div>
-                </div>
-                <span class="action-btn">শুরু →</span>
-            </a>
-
-            <!-- Year Wise Practice Card -->
-            <a id="year-mode-btn" href="#" class="subject-card">
-                <div class="card-left">
-                    <div class="icon-box chem-icon">📅</div>
-                    <div class="subject-info">
-                        <h4>বোর্ড প্রশ্ন (সালভিত্তিক)</h4>
-                        <p>বিগত বছরের বোর্ড প্রশ্ন সমাধান করো</p>
-                    </div>
-                </div>
-                <span class="action-btn">শুরু →</span>
-            </a>
+        <!-- Mode Selection Tabs (Chapter-wise vs Year-wise) -->
+        <div class="type-selector">
+            <button id="tab-chapter" class="type-btn active" onclick="switchType('chapter')">📖 Chapter Wise</button>
+            <button id="tab-year" class="type-btn" onclick="switchType('year')">📅 Year Wise (Board)</button>
         </div>
 
-        <!-- Bottom Navigation Bar -->
-        <div class="bottom-nav">
-            <a href="/" class="nav-item active">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-label">Home</span>
-            </a>
-            <a href="/profile" class="nav-item">
-                <span class="nav-icon">👤</span>
-                <span class="nav-label">Profile</span>
-            </a>
+        <!-- Dynamic List Container (Chapter or Year options will render here) -->
+        <div id="item-list-container" class="chapter-container">
+            <!-- Dynamic Items Load Here -->
         </div>
     </div>
 
-    <!-- External JS Linked -->
+ 
+    <!-- External JS Files -->
+    <script src="{{ url_for('static', filename='js/subjects.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/questions.js') }}"></script> <!-- Ei line ta add korbe -->
     <script src="{{ url_for('static', filename='js/mode.js') }}"></script>
+</body>
+</html>
 </body>
 </html>

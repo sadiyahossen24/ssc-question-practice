@@ -614,3 +614,89 @@ body {
     font-size: 12px;
     color: #a0aec0;
 }
+/* Chapter List Styles */
+.chapter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.chapter-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a202c;
+    border: 2px solid #2d3748;
+    padding: 14px 18px;
+    border-radius: 10px;
+}
+
+.chapter-info h4 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.chapter-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-practice, .btn-exam {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-practice {
+    background: #3182ce;
+    color: white;
+}
+
+.btn-exam {
+    background: #e53e3e;
+    color: white;
+}
+
+.btn-practice:hover, .btn-exam:hover {
+    opacity: 0.85;
+}
+/* Type Selector Tabs */
+.type-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: #111827;
+    padding: 6px;
+    border-radius: 10px;
+    border: 2px solid #1f2937;
+}
+
+.type-btn {
+    flex: 1;
+    padding: 10px;
+    background: transparent;
+    color: #9ca3af;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.type-btn.active {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+}
+
+.type-btn:hover:not(.active) {
+    color: #ffffff;
+    background: #1f2937;
+}

@@ -3,46 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Exam - SSC Prep</title>
+    <title>Quiz Practice - SSC Prep</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
     <div class="app-wrapper">
-        <!-- Top Header -->
+        <!-- Top Navigation -->
         <div class="app-header">
-            <a href="/" class="back-link" style="color: #ffde59; text-decoration: none; font-weight: bold;">✕ Exit</a>
-            <div class="streak-badge">
-                ⏱️ Exam Mode
-            </div>
+            <a href="javascript:history.back()" class="back-link">← Exit Quiz</a>
+            <div id="quiz-timer" class="streak-badge">⚡ SSC Prep</div>
         </div>
 
-        <!-- Question Container -->
-        <div class="quiz-container">
-            <div class="quiz-progress-text" id="quiz-progress">Loading...</div>
-            
-            <h2 class="question-text" id="question-title">
-                প্রশ্ন লোড হচ্ছে...
-            </h2>
+        <!-- Quiz Progress Banner -->
+        <div class="quiz-status">
+            <span id="quiz-title">Quiz Mode</span>
+            <span id="quiz-progress">Question 0/0</span>
+        </div>
+
+        <!-- Main Question Card -->
+        <div id="quiz-card" class="quiz-card">
+            <h3 id="question-text">প্রশ্ন লোড হচ্ছে...</h3>
 
             <!-- Options Container -->
-            <div class="options-container" id="options-box">
-                <!-- Options JS theke dynamic bhabe ashbe -->
+            <div id="options-container" class="options-container">
+                <!-- Dynamic Options Will Load Here -->
             </div>
 
-            <!-- Explanation Box (Hidden by default) -->
-            <div id="explanation-box" class="explanation-box" style="display: none; margin-top: 15px;">
-                <h4>💡 ব্যাখ্যা:</h4>
+            <!-- Explanation Box -->
+            <div id="explanation-box" class="explanation-box" style="display: none;">
+                <h4>💡 ব্যাখ্যা (Explanation):</h4>
                 <p id="explanation-text"></p>
             </div>
         </div>
 
-        <!-- Action Button / Footer -->
-        <div class="quiz-footer">
-            <button class="submit-btn" id="next-btn" style="display: none; margin-top: 15px;">পরবর্তী প্রশ্ন →</button>
+        <!-- Action Button -->
+        <div class="quiz-controls" style="margin-top: 15px;">
+            <button id="next-btn" onclick="nextQuestion()" class="btn-practice" style="display: none; width: 100%; padding: 12px;">পরবর্তী প্রশ্ন ➔</button>
         </div>
     </div>
 
-<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+    <!-- Linked JS Files -->
+    <script src="{{ url_for('static', filename='js/subjects.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/questions.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
 </body>
 </html>

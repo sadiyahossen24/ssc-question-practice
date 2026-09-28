@@ -1,10 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // LocalStorage থেকে Profile Data পড়া
+    // LocalStorage থেকে ডাটা নেওয়া
     const userName = localStorage.getItem("userName") || "SADIYA";
     const userBatch = localStorage.getItem("userBatch") || "2026";
-    const userGroup = localStorage.getItem("userGroup") || "science";
+    let userGroup = (localStorage.getItem("userGroup") || "science").toString().trim().toLowerCase();
 
-    // Header Element-এ Data সেট করা
+    // Valid Group Check
+    if (!["science", "commerce", "arts"].includes(userGroup)) {
+        userGroup = "science";
+    }
+
+    // Header Element Update
     const userNameEl = document.getElementById("user-name");
     const userBatchEl = document.getElementById("user-batch");
     const userGroupEl = document.getElementById("user-group");
@@ -13,13 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (userBatchEl) userBatchEl.innerText = `SSC ${userBatch}`;
     if (userGroupEl) userGroupEl.innerText = userGroup.toUpperCase();
 
-    // Container Elements
+    // Containers
     const generalContainer = document.getElementById("general-subject-list");
     const groupContainer = document.getElementById("group-subject-list");
 
     if (typeof subjectData === "undefined") return;
 
-    // Helper Function to Create Subject Card
+    // Card Generator
     function createCard(sub) {
         const card = document.createElement("a");
         card.href = `/mode?subject=${sub.id}`;
@@ -34,19 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return card;
     }
 
-    // Load General Subjects
+    // Compulsory Subjects
     if (generalContainer && subjectData.general) {
         generalContainer.innerHTML = "";
-        subjectData.general.forEach(sub => {
-            generalContainer.appendChild(createCard(sub));
-        });
+        subjectData.general.forEach(sub => generalContainer.appendChild(createCard(sub)));
     }
 
-    // Load Group Subjects
+    // Selected Group Subjects
     if (groupContainer && subjectData[userGroup]) {
         groupContainer.innerHTML = "";
-        subjectData[userGroup].forEach(sub => {
-            groupContainer.appendChild(createCard(sub));
-        });
+        subjectData[userGroup].forEach(sub => groupContainer.appendChild(createCard(sub)));
     }
 });
